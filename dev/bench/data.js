@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1693936511176,
+  "lastUpdate": 1693936756081,
   "repoUrl": "https://github.com/mgoin/benchmark-sparsezoo",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
@@ -127,6 +127,47 @@ window.BENCHMARK_DATA = {
             "unit": "items/sec",
             "range": "2363.7082279318633",
             "extra": "mean: 4.869905610903444ms\nmedian: 4.841366999983165ms\nstd: 0.4230640601843461ms"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "name": "mgoin",
+            "username": "mgoin"
+          },
+          "committer": {
+            "name": "mgoin",
+            "username": "mgoin"
+          },
+          "id": "11b636a46ebeb81832597c68cfa30e0c85b2a1e1",
+          "message": "Update benchmark.yml",
+          "timestamp": "2023-09-05T17:51:06Z",
+          "url": "https://github.com/mgoin/benchmark-sparsezoo/pull/2/commits/11b636a46ebeb81832597c68cfa30e0c85b2a1e1"
+        },
+        "date": 1693936755242,
+        "tool": "customBiggerIsBetter",
+        "benches": [
+          {
+            "name": "zoo:cv/classification/mobilenet_v1-1.0/pytorch/sparseml/imagenet/pruned_quant-moderate, batch_size:1",
+            "value": 164.11594796750038,
+            "unit": "items/sec",
+            "range": "1065.962500814188",
+            "extra": "mean: 6.083866542242009ms\nmedian: 5.949765499998705ms\nstd: 0.9381193046061138ms"
+          },
+          {
+            "name": "zoo:cv/detection/yolov5-n/pytorch/ultralytics/coco/base_quant-none, batch_size:1",
+            "value": 36.15861851390058,
+            "unit": "items/sec",
+            "range": "688.898242729215",
+            "extra": "mean: 27.641383909677746ms\nmedian: 27.250761000004786ms\nstd: 1.4515931932679784ms"
+          },
+          {
+            "name": "zoo:nlp/multilabel_text_classification/distilbert-none/pytorch/huggingface/goemotions/pruned90_quant-none, batch_size:1",
+            "value": 203.39604320795405,
+            "unit": "items/sec",
+            "range": "1932.9203614007843",
+            "extra": "mean: 4.908233545722813ms\nmedian: 4.838074500000289ms\nstd: 0.5173518888669069ms"
           }
         ]
       }
