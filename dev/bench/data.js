@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1693939012877,
+  "lastUpdate": 1693941031824,
   "repoUrl": "https://github.com/mgoin/benchmark-sparsezoo",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
@@ -209,6 +209,51 @@ window.BENCHMARK_DATA = {
             "unit": "items/sec",
             "range": "934.7192252954695",
             "extra": "mean: 6.642629502884272ms\nmedian: 6.359889000009389ms\nstd: 1.0698399828931462ms"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "michael@neuralmagic.com",
+            "name": "Michael Goin",
+            "username": "mgoin"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "733deaa22c19c5f8ee5ff536c559506633a36bc0",
+          "message": "Merge pull request #3 from mgoin/benchmark-gha\n\nUpdate and cleanup",
+          "timestamp": "2023-09-05T15:07:30-04:00",
+          "tree_id": "dec68b00d6177a35ce873f4e0f622035315a581e",
+          "url": "https://github.com/mgoin/benchmark-sparsezoo/commit/733deaa22c19c5f8ee5ff536c559506633a36bc0"
+        },
+        "date": 1693941030897,
+        "tool": "customBiggerIsBetter",
+        "benches": [
+          {
+            "name": "zoo:cv/classification/mobilenet_v1-1.0/pytorch/sparseml/imagenet/pruned_quant-moderate, batch_size:1",
+            "value": 82.97919843708704,
+            "unit": "items/sec",
+            "range": "585.105962788012",
+            "extra": "mean: 12.039410613654681ms\nmedian: 11.595231000008255ms\nstd: 1.709092136465386ms"
+          },
+          {
+            "name": "zoo:cv/detection/yolov5-n/pytorch/ultralytics/coco/base_quant-none, batch_size:1",
+            "value": 18.088645522656,
+            "unit": "items/sec",
+            "range": "279.82946627509386",
+            "extra": "mean: 55.26619325414352ms\nmedian: 54.398278999997274ms\nstd: 3.573605072086737ms"
+          },
+          {
+            "name": "zoo:nlp/multilabel_text_classification/distilbert-none/pytorch/huggingface/goemotions/pruned90_quant-none, batch_size:1",
+            "value": 156.32845662023047,
+            "unit": "items/sec",
+            "range": "985.9256859526377",
+            "extra": "mean: 6.3891690601275215ms\nmedian: 6.124982000002888ms\nstd: 1.0142752280906073ms"
           }
         ]
       }
