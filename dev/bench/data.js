@@ -2,7 +2,7 @@ window.BENCHMARK_DATA = {
   "lastUpdate": 1693941149855,
   "repoUrl": "https://github.com/mgoin/benchmark-sparsezoo",
   "entries": {
-    "Python Benchmark with pytest-benchmark": [
+    "DeepSparse benchmarks on SparseZoo": [
       {
         "commit": {
           "author": {
