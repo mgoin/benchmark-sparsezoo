@@ -22,7 +22,7 @@ jobs:
       - name: Run benchmark
         run: |
           pip install -r requirements.txt
-          pytest bench.py
+          python bench.py
 
       - name: Store benchmark result
         uses: benchmark-action/github-action-benchmark@v1
