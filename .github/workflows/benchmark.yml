@@ -14,7 +14,7 @@ permissions:
 
 jobs:
   benchmark:
-    name: Run pytest-benchmark benchmark example
+    name: Run deepsparse benchmark
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -30,7 +30,7 @@ jobs:
       - name: Store benchmark result
         uses: benchmark-action/github-action-benchmark@v1
         with:
-          name: Python Benchmark with pytest-benchmark
+          name: DeepSparse benchmarks on SparseZoo
           tool: 'customBiggerIsBetter'
           # Where the output from the benchmark tool is stored
           output-file-path: output.json
