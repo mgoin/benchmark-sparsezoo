@@ -7,8 +7,10 @@ on:
     branches: [ main ]
 
 permissions:
-  contents: write
+  # deployments permission to deploy GitHub pages website
   deployments: write
+  # contents permission to update benchmark contents in gh-pages branch
+  contents: write
 
 jobs:
   benchmark:
@@ -19,38 +21,27 @@ jobs:
       - uses: actions/setup-python@v2
         with:
           python-version: 3.9
+      # Run benchmark and stores the output to a file `output.json`
       - name: Run benchmark
         run: |
           pip install -r requirements.txt
           python bench.py
-
+      # Run `github-action-benchmark` action
       - name: Store benchmark result
         uses: benchmark-action/github-action-benchmark@v1
         with:
           name: Python Benchmark with pytest-benchmark
           tool: 'customBiggerIsBetter'
+          # Where the output from the benchmark tool is stored
           output-file-path: output.json
           # Use personal access token instead of GITHUB_TOKEN due to https://github.community/t/github-action-not-triggering-gh-pages-upon-push/16096
           github-token: ${{ secrets.GITHUB_TOKEN }}
           auto-push: true
           # Show alert with commit comment on detecting possible performance regression
-          alert-threshold: '110%'
+          alert-threshold: '150%'
+          # Enable alert commit comment
           comment-on-alert: true
+          # Enable Job Summary for PRs
+          summary-always: true
           fail-on-alert: true
           alert-comment-cc-users: '@mgoin'
-
-    #   - name: Store benchmark result - separate results repo
-    #     uses: benchmark-action/github-action-benchmark@v1
-    #     with:
-    #       name: Python Benchmark with pytest-benchmark
-    #       tool: 'pytest'
-    #       output-file-path: output.json
-    #       # Use personal access token instead of GITHUB_TOKEN due to https://github.community/t/github-action-not-triggering-gh-pages-upon-push/16096
-    #       github-token: ${{ secrets.BENCHMARK_ACTION_BOT_TOKEN }}
-    #       auto-push: true
-    #       # Show alert with commit comment on detecting possible performance regression
-    #       alert-threshold: '200%'
-    #       comment-on-alert: true
-    #       fail-on-alert: true
-    #       alert-comment-cc-users: '@ktrz'
-    #       gh-repository: 'github.com/benchmark-action/github-action-benchmark-results'
