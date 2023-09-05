@@ -1,11 +1,10 @@
 name: Python Example with pytest
+
 on:
   push:
-    branches:
-      - main
-  workflow_dispatch:
-  schedule:
-      - cron: 0 2 * * * # every day at 2am
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
 
 permissions:
   contents: write
