@@ -26,12 +26,6 @@ jobs:
         run: |
           pip install -r requirements.txt
           python bench.py
-      # Download previous benchmark result from cache (if exists)
-      - name: Download previous benchmark data
-        uses: actions/cache@v1
-        with:
-          path: ./cache
-          key: ${{ runner.os }}-benchmark
       # Run `github-action-benchmark` action
       - name: Store benchmark result
         uses: benchmark-action/github-action-benchmark@v1
@@ -40,8 +34,6 @@ jobs:
           tool: 'customBiggerIsBetter'
           # Where the output from the benchmark tool is stored
           output-file-path: output.json
-          # Where the previous data file is stored
-          external-data-json-path: ./cache/benchmark-data.json
           # Use personal access token instead of GITHUB_TOKEN due to https://github.community/t/github-action-not-triggering-gh-pages-upon-push/16096
           github-token: ${{ secrets.GITHUB_TOKEN }}
           auto-push: true
